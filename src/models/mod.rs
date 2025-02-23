@@ -1,9 +1,11 @@
 pub mod models{
+    use iced::futures::stream::Next;
+    use serde::Deserialize;
     ///
     /// [ModificationType] represents application's
     /// known modification loaders.
     ///
-    enum ModificationType{
+    pub enum ModificationType{
         Forge,
         Fabric,
         Quilt,
@@ -14,7 +16,7 @@ pub mod models{
     /// binary properties.
     /// Short loaders type stores in [ModificationType]
     ///
-    struct Modification {
+    pub struct Modification {
         name:              String,
         modification_type: ModificationType,
         path:              String,
@@ -27,7 +29,7 @@ pub mod models{
     /// dependencies and other
     ///
     #[derive(Debug)]
-    struct ForgeManifest {
+    pub struct ForgeManifest {
         id:           String,
         description:  String,
         version:      String,
@@ -41,7 +43,7 @@ pub mod models{
     /// configuration.
     ///
     #[derive(Debug)]
-    struct FabricManifest {
+    pub struct FabricManifest {
         id:           String,
         description:  String,
         version:      String,
